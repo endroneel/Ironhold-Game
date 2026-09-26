@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+const root=new URL('./',import.meta.url);
+let html=await fs.readFile(new URL('src/index.html',root),'utf8');
+const css=await fs.readFile(new URL('src/style.css',root),'utf8');
+const engine=await fs.readFile(new URL('src/engine.js',root),'utf8');
+const ui=await fs.readFile(new URL('src/ui.js',root),'utf8');
+html=html.replace('<link rel="stylesheet" href="style.css">',()=>'<style>\n'+css+'\n</style>');
+html=html.replace('<script src="engine.js"></script><script src="ui.js"></script>',()=>'<script>\n'+engine+'\n</script>\n<script>\n'+ui+'\n</script>');
+await fs.writeFile(new URL('index.html',root),html);
+console.log('Built standalone index.html');

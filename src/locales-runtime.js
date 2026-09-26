@@ -7,7 +7,7 @@ const pattern=new RegExp('(?<![\\p{L}])(?:'+[...table.keys()].sort((a,b)=>b.leng
 let language='en';try{const saved=localStorage.getItem('ironhold-language');if(['en','fr','kk'].includes(saved))language=saved;}catch{}
 const source=new WeakMap(),attributes=new WeakMap();
 const dynamic=window.IronholdLocalePatterns.map(([re,fr,kk])=>({re:new RegExp(re,'g'),fr,kk}));
-function text(value,lang=language){if(lang==='en')return value;const held=[];let out=value;for(const p of dynamic)out=out.replace(p.re,(...args)=>{const translated=p[lang].replace(/\$(\d+)/g,(_,n)=>args[Number(n)]);const token='\uE000'+held.length+'\uE001';held.push(translated);return token;});out=out.replace(pattern,key=>table.get(key)?.[lang]||key);return out.replace(/\uE000(\d+)\uE001/g,(_,n)=>held[n]);}
+function text(value,lang=language){if(lang==='en'||value.trim()==='designed and deployed by Indranil BISWAS')return value;const held=[];let out=value;for(const p of dynamic)out=out.replace(p.re,(...args)=>{const translated=p[lang].replace(/\$(\d+)/g,(_,n)=>args[Number(n)]);const token='\uE000'+held.length+'\uE001';held.push(translated);return token;});out=out.replace(pattern,key=>table.get(key)?.[lang]||key);return out.replace(/\uE000(\d+)\uE001/g,(_,n)=>held[n]);}
 const skip=el=>!el||el.closest('script,style,textarea,input,[translate="no"],[data-rules-localized]');
 const ruleRoot=document.querySelector('#rules-view .rules');rules.en=ruleRoot.innerHTML;
 function setRules(el){if(el.dataset.rulesLocalized!==language){el.innerHTML=rules[language];el.dataset.rulesLocalized=language;}}

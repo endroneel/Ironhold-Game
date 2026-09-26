@@ -1,0 +1,12 @@
+Round (\d+) begins\.	La manche $1 commence.	$1-раунд басталды.
+Round (\d+) complete	Manche $1 terminée	$1-раунд аяқталды
+Release stage (\d+) output	Libérer la sortie de l’étape $1	$1-саты өнімін беру
+Stage (\d+) of (\d+)	Étape $1 sur $2	$1-саты, барлығы $2
+(\d+) total rolls recorded · Last completed roll	$1 lancers enregistrés · Dernier lancer effectué	$1 лақтыру тіркелді · Соңғы аяқталған лақтыру
+(\d+) Titans shipped this round\. (\d+) approved in total\.	$1 Titans livrés cette manche. $2 approuvés au total.	Осы раундта $1 Титан жеткізілді. Барлығы $2 мақұлданды.
+(\d+) Titans shipped in total\. ([-\d]+) gold across all guilds\.	$1 Titans livrés au total. $2 pièces dans toutes les guildes.	Барлығы $1 Титан жеткізілді. Барлық гильдияда $2 алтын.
+Enter a whole number from 1 to (\d+)\.	Saisissez un entier de 1 à $1.	1 мен $1 аралығындағы бүтін сан енгізіңіз.
+(\d+)h due R(\d+)	$1 h dues en M$2	$1 сағ, мерзімі Р$2
+(\d+)h due round (\d+)	$1 h dues en manche $2	$1 сағ, мерзімі $2-раунд
+D10 complete	D10 terminé	D10 аяқталды
+(\d+)-sided die	Dé à $1 faces	$1 жақты текше

@@ -1,3 +1,4 @@
+import './build-locales.mjs';
 import fs from 'node:fs/promises';
 const root=new URL('./',import.meta.url);
 let html=await fs.readFile(new URL('src/index.html',root),'utf8');
@@ -7,6 +8,8 @@ const teaching=await fs.readFile(new URL('src/teaching.js',root),'utf8');
 const ui=await fs.readFile(new URL('src/ui.js',root),'utf8');
 html=html.replace('<link rel="stylesheet" href="style.css">',()=>'<style>\n'+css+'\n</style>');
 html=html.replace('<script src="engine.js"></script><script src="teaching.js"></script><script src="ui.js"></script>',()=>'<script>\n'+engine+'\n</script>\n<script>\n'+teaching+'\n</script>\n<script>\n'+ui+'\n</script>');
+const locales=await fs.readFile(new URL('src/locales.js',root),'utf8');
+html=html.replace('<script src="locales.js"></script>',()=>'<script>\n'+locales+'\n</script>');
 // Embed each artwork once; dynamic guild cards use the same shared image map.
 const artwork={};
 for(const file of await fs.readdir(new URL('assets/',root))){

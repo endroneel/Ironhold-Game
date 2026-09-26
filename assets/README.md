@@ -1,16 +1,18 @@
-# Ironhold comic artwork
+# Steppe Guilds artwork
 
-Original image generated with the built-in image-generation tool for this project. WebP export of the generated artwork; no external image requests are required because the standalone build embeds it.
+Ten original illustrations generated for this game using the built-in image generation tool on 26 September 2026. The prompt set is in `prompts.json`. WebP copies are optimized for the standalone HTML; no external image service is needed during play. Each asset replaces the corresponding older fantasy illustration, including all three view backgrounds, six guild portraits, and the council keeper.
 
-Prompt: Original wide comic-book illustration for The Siege of Ironhold: guild craftspeople checking supply crates and coordinating assembly of a teal-and-brass Titan in a medieval-industrial fortress workshop. Bold black ink, halftone texture, warm forge lighting, navy/teal and gold palette. Emphasize teamwork and supply coordination, no combat, lettering, watermark or existing franchise characters.
+- ironhold-comic.webp — workshop hero, logo and factory background
+- ironhold-ledger.webp — quartermasters, ledger and negotiation background
+- ironhold-council.webp — council and rules background
+- guild-ember.webp — Saryarqa / Shop 1
+- guild-gear.webp — Altai / Shop 2
+- guild-arcane.webp — Zhetysu / Shop 3
+- guild-anvil.webp — Shanyraq / Subassembly
+- guild-titan.webp — Tulpar / Final assembly
+- guild-gaze.webp — Qyran / Quality inspection
+- game-master.webp — council keeper and treasury instructor
 
-## Companion tab artwork
+Guilds and scenes are fictional. They draw inspiration from Kazakh decorative craft and steppe settings; they are not historical reconstructions. Cultural context consulted: UNESCO, Traditional knowledge and skills in making Kyrgyz and Kazakh yurts (https://www.unesco.org/archives/multimedia/document-3669), and National Museum of Kazakhstan, Kazakh yurt craftsmanship (https://www.nmrk.kz/en/structure/scientific-activity/national-list/695/).
 
-Two original built-in generated companion illustrations use the workshop image as an art-direction reference: a quartermaster and clerk with a ledger, gold and crates for Ledger & history; six guild representatives discussing a supply-network plan for Story & rules. Both prompts request consistent bold comic outlines, halftone texture, medieval-industrial architecture and teal/brass/gold colours, without lettering or watermarks. The existing Titan workshop scene illustrates Factory floor.
-
-## Guild portraits
-
-Six original square illustrations generated with the built-in image-generation tool, using the Titan workshop image as the style reference. Common prompt: polished comic-book collectible portrait, bold black outlines and halftone shading, medieval industrial setting, teal/navy/brass/gold palette, warm light, centered subject, no lettering, watermark or franchise characters. Subjects: Emberborn smith forging a Titan frame; Gearwright engineer assembling a brass engine; Arcane artisan enchanting armor; Hammer and Anvil team fitting engine to chassis; Titanwright builders completing a Titan; Order inspector examining a joint with a magnifying lens and checklist. Compressed WebP copies are embedded in the standalone HTML for offline play.
-
-## Game Master emblem
-Original built-in generated comic-book wizard medallion, inspired by Gandalf: silver beard, grey pointed hat, teal robe, amber staff and coin purse. Antique gold frame, halftone shading, transparent exterior. Used beside the Guild treasury & Game Master heading.
+The deterministic `ironhold-qr.svg` continues to encode https://endroneel.github.io/Ironhold-Game/ and is not AI-generated artwork.

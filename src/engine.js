@@ -2,12 +2,12 @@
 'use strict';
 const VERSION='3.0.0';
 const TEAMS=[
- {name:'Emberborn Smiths',role:'Shop 1',inputs:[],out:0},
- {name:"Gearwright’s Consortium",role:'Shop 2',inputs:[],out:1},
- {name:'Arcane Weavers',role:'Shop 3',inputs:[],out:2},
- {name:'Hammer and Anvil Guild',role:'Subassembly',inputs:[0,1],out:3},
- {name:'Titanwrights',role:'Final assembly',inputs:[3,2],out:4},
- {name:'Order of the Unerring Gaze',role:'Quality inspection',inputs:[4],out:5}
+ {name:'Saryarqa Smiths · Сарыарқа',role:'Shop 1',inputs:[],out:0},
+ {name:"Altai Gearmakers · Алтай",role:'Shop 2',inputs:[],out:1},
+ {name:'Zhetysu Armorers · Жетісу',role:'Shop 3',inputs:[],out:2},
+ {name:'Shanyraq Assembly · Шаңырақ',role:'Subassembly',inputs:[0,1],out:3},
+ {name:'Tulpar Builders · Тұлпар',role:'Final assembly',inputs:[3,2],out:4},
+ {name:'Qyran Inspectors · Қыран',role:'Quality inspection',inputs:[4],out:5}
 ];
 const STAGES=[[0,1],[2,3],[4],[5]];
 const BUFFERS=['Component 1','Component 2','Component 3','Subassemblies','Uninspected Titans'];

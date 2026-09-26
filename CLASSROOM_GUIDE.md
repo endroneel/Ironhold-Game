@@ -70,3 +70,11 @@ The webpage uses procurement exception alerts and quality holds with corrective 
 After each die roll, read the large result card and click Continue. A production D6 of 1–3 explicitly requires D10; 4–6 explicitly does not. The separate D10 button appears only when an event is required. Odd or inapplicable D10 results require another D10. All rolls remain in the ledger.
 
 Guild names include their roles on the action panel, team cards and ledger; the expandable guild directory also lists them before play. The six inline SVG icons are original artwork bundled with the game.
+
+## Guild treasury and Game Master (3.5)
+
+Before a new session, expand Game Master setup and choose starting gold per guild (1–1000; default 10). During play, expand Transfer gold between guilds on Factory floor, choose sender and recipient, enter a whole amount and record the agreement. The sender must keep at least 1 gold. Transfers conserve factory gold but affect richest-guild rankings, so discuss pooling incentives.
+
+Click Enter Game Master mode to reveal instructor controls. Enter your name, select one guild or all six, choose a gold grant/penalty, free extra downtime for next round (rounds 1–14), or a custom instruction note. A note does not change calculations. Explain every exception. Zero or negative gold ends the game, including instructor penalties; transfers must precede a bankrupting charge. Closed games cannot be revived except by Undo to correct an entry. Existing queued repairs are retained when adding downtime.
+
+All transfers and exceptions are included in history, saved replay and CSV. Repair costs are shown separately from net cash movements. The displayed gold baseline reflects the starting rule; grants may make current gold exceed it. Instructor mode is a shared-screen facilitator control, not an authenticated account or student access restriction.

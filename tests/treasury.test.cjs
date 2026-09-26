@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict'),E=require('../src/engine.js');
+let s=E.newGame({startingGold:20});assert.deepEqual(s.teams.map(t=>t.gold),Array(6).fill(20));
+const pending=JSON.stringify(s.pending);
+s=E.dispatch(s,{type:'transfer',from:0,to:1,amount:5,reason:'Supplier recovery'});assert.equal(s.teams[0].gold,15);assert.equal(s.teams[1].gold,25);assert.equal(s.teams.reduce((n,t)=>n+t.gold,0),120);assert.equal(JSON.stringify(s.pending),pending);
+for(const a of [{from:0,to:0,amount:1},{from:0,to:1,amount:15},{from:0,to:1,amount:-1},{from:0,to:1,amount:1.5}])assert.throws(()=>E.dispatch(s,{type:'transfer',reason:'Test transfer',...a}));
+s=E.dispatch(s,{type:'exception',kind:'gold',team:null,amount:3,reason:'Emergency grant',instructor:'Instructor'});assert.equal(s.teams.reduce((n,t)=>n+t.gold,0),138);
+s=E.dispatch(s,{type:'exception',kind:'downtime',team:0,amount:16,reason:'Supplier audit',instructor:'Instructor'});assert.equal(s.teams[0].gold,18);assert.equal(E.remaining(s,0),16);assert.equal(s.rows[0].hours,0);
+s=E.dispatch(s,{type:'exception',kind:'note',team:null,reason:'Discuss pooling funds',instructor:'Instructor'});assert.deepEqual(E.deserialize(E.serialize(s)),s);assert.equal(E.undo(s).exceptions.length,2);assert(E.csv(s).includes('Emergency grant'));assert(E.csv(s).includes('Supplier recovery'));assert(E.csv(s).includes('"18","production"'));E.assertState(s);
+while(s.pending.kind!=='roundEnd')s=E.dispatch(s,s.pending.kind==='release'?{type:'release'}:{type:'die',value:6});
+s=E.dispatch(s,{type:'transfer',from:1,to:0,amount:2,reason:'Shared supplier costs'});assert.equal(s.rounds[0].gold[0],s.teams[0].gold);
+s=E.dispatch(s,{type:'next'});assert.equal(s.rows.find(r=>r.round===2&&r.team===0).hours,8);assert.equal(E.remaining(s,0),8);E.assertState(s);
+s=E.dispatch(s,{type:'exception',kind:'gold',team:0,amount:-s.teams[0].gold,reason:'Bankruptcy test',instructor:'Instructor'});assert.equal(s.status,'ended');assert.equal(s.result.type,'bankrupt');assert.throws(()=>E.dispatch(s,{type:'transfer',from:1,to:0,amount:1,reason:'Too late'}));assert.deepEqual(E.deserialize(E.serialize(s)),s);
+assert.throws(()=>E.newGame({startingGold:0}));assert.throws(()=>E.newGame({startingGold:1.5}));assert.equal(E.deserialize(JSON.stringify({format:'ironhold-save',version:'3.0.0',config:{name:'Legacy',target:null},actions:[]})).teams[0].gold,10);
+let late=E.newGame();while(late.round<15)late=E.dispatch(late,late.pending.kind==='roundEnd'?{type:'next'}:late.pending.kind==='release'?{type:'release'}:{type:'die',value:6});assert.throws(()=>E.dispatch(late,{type:'exception',kind:'downtime',team:0,amount:4,reason:'Too late',instructor:'Instructor'}));
+console.log('PASS Treasury: custom starting gold, atomic transfers, invalid transfers, grants, free queued downtime, round snapshots, bankruptcy, legacy saves, replay, undo, CSV and horizon checks.');

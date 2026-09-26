@@ -89,3 +89,8 @@ This is shared-browser role switching, not authenticated multiplayer. Role selec
 
 ### Player dice tab
 Each guild opens on **Roll dice**. Only the die required for that guild’s current action is offered; other guilds wait. Review the displayed result, then continue to a separate D10 roll when required, or the next procurement decision. D4 and other prescribed rolls appear automatically when the rules require them. Use **Guild stock & history** for inventory and transfers.
+
+### Round-by-round procurement lab
+Open **Ledger & History → Procurement lab** and expand a round (also included in the Game Master round showcase). Use its actual calculations to trace capacity, complete input sets, material balances, cash transfers and repair charges. Partial rounds are labelled “recorded so far”; production and final settlement are kept separate.
+
+Ask guilds to explain: (1) which shortage or corrective work limited shipments, (2) where stock accumulated, (3) who paid versus who experienced the delay, and (4) what recovery commitment they would negotiate. A transfer redistributes liquidity; it does not create factory cash or change capacity. New charges per shipment are a period indicator, not a full unit cost or total cost of ownership. Compare voluntary and forced supplier switching, then discuss why a cheaper option may still depend on the remaining horizon and future risks. Dice expected values are averages, not guarantees.

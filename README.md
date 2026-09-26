@@ -1,88 +1,95 @@
-# The Siege of Ironhold
+# Ironhold — France & Kazakhstan editions
 
-A standalone Andon–Jidoka classroom game for six teams and one instructor.
+A standalone procurement, supplier-quality and coordination classroom game for six guilds and a Game Master.
 
 **designed and deployed by Indranil BISWAS**
 
-This is a separate website. It does not require or modify the project management website.
+**Play:** https://endroneel.github.io/Ironhold-Game/
 
-## Run immediately
+## Country and language are separate choices
 
-Open `index.html` in a modern browser. It contains the interface, styles and game engine in one file. There are no package installations, external fonts, network requests, accounts or Streamlit dependencies required to play.
+At the top of every screen, **France · Français** selects the France-inspired setting and **Kazakhstan · Қазақша** selects the Kazakhstan-inspired setting. These buttons change the story, guild identities, portraits, Game Master artwork, workshop, ledger, council and background scenes. They do not select an interface language.
 
-One instructor operates the screen. Six teams discuss and announce their decisions. Opening the URL on six devices creates six independent games; this edition does not synchronize devices.
+The separate **English**, **Русский**, **Français** and **Қазақша** buttons change the interface language without changing the selected country. Both countries support all four languages. For example, France + Русский keeps the French setting and presents its rules, names, decisions and teaching explanations in Russian.
 
-## Publish as a NEW GitHub Pages website
+Country and language preferences are retained in this browser when storage is available. Changing either preference does **not** restart a session, change a die result, deduct gold or modify the saved action history. Existing game saves remain compatible.
 
-1. Create a new public GitHub repository, for example `ironhold-game`.
-2. Extract this ZIP. Upload its **contents**, with `index.html` at the top level of the repository. Do not upload only the ZIP or put everything inside another enclosing folder.
-3. In that new repository, open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Select **main** and **/ (root)**, then **Save**.
-6. Wait for the Pages deployment to complete. Use the website address displayed in Settings → Pages.
+Direct classroom links:
 
-If the repository is named `ironhold-game` under `endroneel`, the resulting address will normally be `https://endroneel.github.io/ironhold-game/`. That is the intended address after you publish; this package has not created or deployed a repository.
+- France / English: https://endroneel.github.io/Ironhold-Game/?setting=fr&lang=en
+- France / Russian: https://endroneel.github.io/Ironhold-Game/?setting=fr&lang=ru
+- Kazakhstan / English: https://endroneel.github.io/Ironhold-Game/?setting=kz&lang=en
+- Kazakhstan / Russian: https://endroneel.github.io/Ironhold-Game/?setting=kz&lang=ru
 
-Only `index.html` is essential for the game. `.nojekyll` is included. The source, tests and documents are optional for hosting but useful for teaching and maintenance.
+## The six guilds
 
-Official setup reference: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+| Supply-chain role | France setting | Kazakhstan setting |
+| --- | --- | --- |
+| Shop 1: frames | Forges de Normandie | Saryarqa Smiths · Сарыарқа |
+| Shop 2: engines | Horlogers du Jura | Altai Gearmakers · Алтай |
+| Shop 3: armor | Armuriers de Saint-Étienne | Zhetysu Armorers · Жетісу |
+| Subassembly | Compagnons de la Loire | Shanyraq Assembly · Шаңырақ |
+| Final assembly | Ateliers du Creusot | Tulpar Builders · Тұлпар |
+| Quality inspection | Gardiens de Lyon | Qyran Inspectors · Қыран |
 
-## Classroom use
+France is a fictional Seine-side guild city inspired by Rouen, with timber-framed buildings, Gothic council windows, riverside accounts and original vector bande-dessinée artwork. The Kazakhstan setting retains its steppe, caravan-city and shanyraq-inspired comic illustrations.
 
-Read `CLASSROOM_GUIDE.md`. Start in Practice mode for the first run. Mission mode requires an instructor-selected target of 1–30 approved Titans. The rules have been reconciled, but target difficulty and game balance need classroom piloting.
+All guilds are **fictional**. Names combine cultural and craft inspirations rather than reconstructing actual organizations or a single historical period. The Jura mechanical-craft reference is documented by [UNESCO](https://ich.unesco.org/en/RL/craftsmanship-of-mechanical-watchmaking-and-art-mechanics-01560); Saint-Étienne's armouring heritage is described by its [Musée d’Art et d’Industrie](https://mai.saint-etienne.fr/decouvrir/collections/collection-armes); Le Creusot's industrial heritage is described by the [city](https://www.le-creusot.fr/ma-ville/economie-locale/industrie/). These sources inform the fictional setting; the illustrations are not copied from them.
 
-The **Story & rules** view is available within the page, including when offline. The `documents/` folder contains the revised printable rules, scorecard and story.
+## Run and teach
 
-## Saves and records
+Open the published site, or open the generated root `index.html` in a modern browser. The file includes the game, translations and both artwork sets. No account, server, external font service, live translation API, installation or Streamlit dependency is needed to play.
 
-- **Save game** downloads a JSON history; it is the portable backup.
-- **Load game** validates and replays that history to recover inventories, cash, queued repairs and the exact pending decision.
-- **Resume saved session** uses browser storage when available. Do not rely on it as the sole backup; private browsing, clearing browser data, a new origin or opening a different local file can remove or isolate that save.
-- **Export CSV** downloads the six team ledgers. Rows whose output was not released are marked `no`. Settlement charges appear separately.
-- **Undo entry** is for an instructor input error, not unfavorable dice. It removes the most recent action and rebuilds the prior state.
-- The JSON contains no account credentials. It is not a tamper-proof assessment record: someone can replace it with another legal history.
+Choose **Game Master** to start or restore a session. Six guilds then take turns using their own dashboards and rule-appropriate dice tabs. The Game Master can reveal the common results. Start in Practice mode for a first run; Mission mode needs an instructor-chosen target of 1–30 approved Titans. Each guild starts with 10 gold by default, configurable from 1 to 1000 before the session.
 
-## Editing and tests
+**This remains a shared-browser classroom game, not synchronized multiplayer.** Opening it on separate devices creates independent sessions. The QR code opens the website; it does not connect a device to someone else's game. Role views are display filters, not authenticated private accounts.
 
-The editable source is in `src/`. Open `src/index.html` to run those separate files directly. After edits, rebuild the one-file website:
+The rules and procurement lab explain production capacity, input constraints, buffer balances, repair charges, inter-guild transfers, supplier negotiations and the consequences of each recorded round. Target difficulty and game balance still require classroom piloting.
+
+## Saves and exports
+
+**Save game** downloads a portable JSON action history. **Load game** validates and replays it; editable balances are not trusted. **Resume saved session** uses this browser's existing storage. Download a save before clearing browser data or changing devices. **Undo entry** is for correcting input errors, not rerolling an unfavourable result.
+
+JSON and CSV keep the canonical engine format for replay and accounting; the country and language are presentation preferences. The on-screen ledger, history, guild names and teaching explanations use the chosen country and language. Free-form instructor names, reasons and session names are not sent to any translation service. The designer credit remains exactly as written above in every language.
+
+## Development and regression tests
+
+Edit files under `src/`, then rebuild the root page. Serve or open **the generated root `index.html`**, not the unbundled source template.
 
 ```sh
+npm install --no-save --package-lock=false jsdom@26
 node build.mjs
-node tests/engine.test.cjs
+node --test --test-timeout=90000 tests/*.test.cjs
 ```
 
-Node is only needed for development and automated tests, not for classroom use or hosting. No `npm install` is needed.
+Node and jsdom are development dependencies only. The GitHub Actions workflow builds, runs all regression suites and commits the generated standalone page only after tests pass. A subsequent normal repository commit triggers the branch-based GitHub Pages deployment; GITHUB_TOKEN-generated commits alone do not start a new Pages build.
 
-The engine is separate from the interface and uses deterministic actions. Tests cover production flow, event and solution applicability, repairs, supplier attribution, vendor changes, protection boundaries, bankruptcy, settlement, save/load and randomized accounting invariants. The test suite does not establish pedagogical balance or real-world manufacturing probabilities.
+The edition regression suite covers all **2 countries × 4 languages**, all 10 France artwork replacements, titles and localized guilds, Russian rules and procurement calculations, player dice and role switching, query links, saved preferences, invalid preferences and byte-for-byte preservation of game saves during switching. The pre-existing engine, treasury, role, teaching, UI and French/Kazakh translation tests remain in place.
 
-## Files
-
-| File | Purpose |
+| Source | Purpose |
 | --- | --- |
-| `index.html` | Complete website, ready to open or upload |
-| `CLASSROOM_GUIDE.md` | Facilitation and debrief instructions |
-| `src/engine.js` | Game state, rules and accounting |
-| `src/ui.js` | Browser controls, views, saves and CSV export |
-| `src/style.css` | Responsive visual design |
-| `src/index.html` | Editable page structure and embedded rule explanations |
-| `build.mjs` | Bundles source into the standalone HTML page |
-| `tests/engine.test.cjs` | Automated rule checks |
-| `documents/` | Revised teaching PDFs and score workbook |
+| `src/engine.js` | Unchanged game rules, deterministic actions and accounting |
+| `src/ui.js` | Role dashboards, dice, transfers, Game Master and records |
+| `src/teaching.js` | Round-level procurement calculations and interpretation |
+| `src/editions.js` | Country stories, place labels and localized guild identities |
+| `src/edition-art.js` | Original self-contained France comic scenes and portraits |
+| `src/editions.css` | Country controls, edition banner and responsive theme |
+| `src/locales-runtime.js` | Independent country/language switching and reversible display translation |
+| `src/locale-phrases.tsv` | Existing English/French/Kazakh phrase catalog |
+| `src/locale-ru.txt` | Russian translation of all 486 existing phrases |
+| `src/locales/rules-ru.html` | Complete Russian rulebook |
+| `build-locales.mjs` | Validates translation coverage and source-key alignment |
+| `build.mjs` | Embeds code, translations and artwork into one offline-capable file |
+| `tests/editions.test.cjs` | Country/language and save-preservation regressions |
 
 ## Troubleshooting
 
-**404 after publishing:** confirm you are configuring the new repository, and `main / (root)` contains lowercase `index.html`. Check the Pages deployment status under Actions.
+**Old screen:** reload after deployment, or perform a hard refresh. Do not clear site data before downloading a game save.
 
-**Old version appears:** refresh after deployment completes. Download the current game save first if you want to preserve it.
+**No resume button:** browser storage may be unavailable or associated with another origin. Use Load game with the JSON backup.
 
-**No resume button:** browser storage may be unavailable or belong to another origin. Use Load game with the JSON backup.
+**No roll available:** your guild may be waiting for another role, serving repair hours or missing a complete input set. The player dice tab explains the current turn.
 
-**Why did a team skip its roll?** It is serving repair hours or lacks a complete input set. Read the latest events and its team card.
+**Repeated D10 or D4:** odd, protected or inapplicable results must be rerolled under the rules; these rerolls do not create extra charges.
 
-**Why did a die reroll?** Only applicable event and solution faces are accepted. Unknown causes, inapplicable causes and protected raw-material events require another die.
-
-**Why did a team pay for another team's defect?** A valid rework result assigns its cost to the detecting team's immediate supplier using the revised attribution rule.
-
-## Scope
-
-Rules version 3.0.0. Starting funds are fixed at 10 gold; 15 rounds; ticket rates 1/2/7 gold. A signal is not a separate fine. This edition models defects as incidents that reduce or hold output rather than as hidden bad batches. No artificial revenue, recurring-defect probabilities, extra phase penalties or autonomous opponent decisions have been added.
+**Shared-screen controls are not private:** do not use this game as a tamper-proof assessment system. A valid JSON history can be replaced by another valid history.

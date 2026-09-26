@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,9 +25,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-save --package-lock=false jsdom@26
       - run: node build.mjs
-      - run: node --test tests/*.test.cjs
       - uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: ironhold-game-source
           path: |
@@ -36,6 +35,14 @@ jobs:
             index.html
             build*.mjs
             README.md
+          retention-days: 7
+      - name: Regression tests
+        run: node --test --test-timeout=90000 tests/*.test.cjs > test-results.txt 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ironhold-test-results
+          path: test-results.txt
           retention-days: 7
       - name: Publish generated standalone game
         run: |

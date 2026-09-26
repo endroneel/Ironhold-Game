@@ -86,3 +86,6 @@ Choose Game Master on entry to create or restore the session. Use Switch role / 
 The Game Master retains the full dashboard, exports, exception controls and starting-gold setup. Showcase all guilds opens a read-only debrief: choose a recorded round to see balances, cumulative output, queued downtime and that round's complete event history. A current incomplete round is labelled recorded so far. Return to Game Master resumes the live state unchanged. Save the game to review it later.
 
 This is shared-browser role switching, not authenticated multiplayer. Role selection is unrestricted and the complete game remains in the browser and save file. It is not suitable for securely concealing information from students who control the device. Separate phones/laptops do not synchronize. Private per-guild sessions require a backend with authentication, server-enforced role access and authoritative game state.
+
+### Player dice tab
+Each guild opens on **Roll dice**. Only the die required for that guild’s current action is offered; other guilds wait. Review the displayed result, then continue to a separate D10 roll when required, or the next procurement decision. D4 and other prescribed rolls appear automatically when the rules require them. Use **Guild stock & history** for inventory and transfers.

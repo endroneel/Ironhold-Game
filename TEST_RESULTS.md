@@ -29,3 +29,7 @@ The optional `tests/ui.test.cjs` also passed in jsdom, covering setup, escaped s
 ## Limits
 
 No GitHub repository or live Pages deployment was created as part of this standalone package. No synchronized multiplayer service is included. Functional tests do not establish classroom balance, an optimal strategy, or real-world event probabilities. Run a classroom pilot before setting a competitive shipment target.
+
+## Procurement interface update (3.1)
+
+Passed all 19 engine tests and updated jsdom UI checks. Verified result acknowledgement gates, distinct D10 control after partial production, no D10 after full production, odd D10 rerolls, six original SVG icons, role labels, supplier voting, four stages, save/resume and undo. Engine rules and save format remain version 3.0.0 for compatibility.

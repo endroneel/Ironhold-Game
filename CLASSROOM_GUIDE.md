@@ -55,10 +55,18 @@ Ask teams to connect their answers to a specific incident in the history:
 4. Did a vendor change protect the factory, and what was the short-term cost?
 5. Why is an honest signal useful if the signal itself carries no fine?
 6. Where does random rework attribution differ from real traceability and root-cause analysis?
-7. What is absent from this simplified Jidoka model—for example hidden defective units, recurrence and inspection accuracy?
+7. What is absent from this simplified supplier quality-control model—for example hidden defective units, recurrence and inspection accuracy?
 
 ## Learning experiments
 
 Use a first run to observe the system, then a second run to test a different decision policy. Different random rolls can themselves change outcomes; do not attribute every difference to strategy. Saved histories support exact replay of the same decisions and outcomes, but this version does not yet provide counterfactual replay with a fixed independent random stream by event type.
 
 Use Undo only to correct an entry. It is not a team strategy or a free reroll. No participant accounts, shared-device synchronization or secure exam-grade audit trail are provided.
+
+## Procurement edition 3.1 interface
+
+The webpage uses procurement exception alerts and quality holds with corrective action. Planned supplier corrective action schedules work for the next round; supplier risk review defers assessment; a quality hold resolves the incident immediately. Costs, eligibility and probabilities are unchanged. The linked original revised PDFs describe the original manufacturing framing; use the in-page procurement rules for the current interface.
+
+After each die roll, read the large result card and click Continue. A production D6 of 1–3 explicitly requires D10; 4–6 explicitly does not. The separate D10 button appears only when an event is required. Odd or inapplicable D10 results require another D10. All rolls remain in the ledger.
+
+Guild names include their roles on the action panel, team cards and ledger; the expandable guild directory also lists them before play. The six inline SVG icons are original artwork bundled with the game.

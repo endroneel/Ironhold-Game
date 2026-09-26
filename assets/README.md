@@ -11,3 +11,6 @@ Two original built-in generated companion illustrations use the workshop image a
 ## Guild portraits
 
 Six original square illustrations generated with the built-in image-generation tool, using the Titan workshop image as the style reference. Common prompt: polished comic-book collectible portrait, bold black outlines and halftone shading, medieval industrial setting, teal/navy/brass/gold palette, warm light, centered subject, no lettering, watermark or franchise characters. Subjects: Emberborn smith forging a Titan frame; Gearwright engineer assembling a brass engine; Arcane artisan enchanting armor; Hammer and Anvil team fitting engine to chassis; Titanwright builders completing a Titan; Order inspector examining a joint with a magnifying lens and checklist. Compressed WebP copies are embedded in the standalone HTML for offline play.
+
+## Game Master emblem
+Original built-in generated comic-book wizard medallion, inspired by Gandalf: silver beard, grey pointed hat, teal robe, amber staff and coin purse. Antique gold frame, halftone shading, transparent exterior. Used beside the Guild treasury & Game Master heading.

@@ -1,0 +1,30 @@
+/* Country presentation is independent of game state and interface language. */
+.language-switch.edition-controls{display:block;margin:0 0 22px;padding:16px 18px;background:#ffffff0c;border:1px solid #ffffff35;border-radius:10px}
+.edition-control-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.edition-control-group{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.edition-control-label{font-size:.72rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#ecd8b5;margin-right:4px}
+.edition-controls button{font-size:.88rem;padding:9px 13px;border:1px solid #ffffff55;color:#fff;background:transparent;border-radius:5px}
+.edition-controls button:hover:not(:disabled){background:#ffffff16;border-color:#efd4a1;color:#fff}
+.edition-controls button[aria-pressed=true]{background:#efd4a1;color:#192f3b;border-color:#efd4a1;box-shadow:0 2px 0 #070e1740}
+.edition-controls .edition-hint{font-size:.78rem;line-height:1.5;color:#d5e0e5;margin:11px 0 0;letter-spacing:normal;text-transform:none}
+#edition-banner{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,1fr);gap:0;border:3px solid var(--ink);border-radius:8px;overflow:hidden;margin:0 0 25px;background:#f8edd5;box-shadow:5px 5px 0 #18334024}
+#edition-banner img{display:block;width:100%;height:285px;object-fit:cover;object-position:center 46%;border-right:3px solid var(--ink)}
+.edition-banner-copy{display:flex;flex-direction:column;justify-content:center;padding:25px 29px;min-width:0}
+.edition-banner-copy h3{font-family:Georgia,serif;font-size:clamp(1.3rem,2vw,1.75rem);line-height:1.2;margin:0 0 14px;color:var(--ink)}
+.edition-banner-copy p{font-size:.95rem;line-height:1.65;color:var(--ink)}
+.edition-banner-copy small{font-size:.72rem;line-height:1.6;color:var(--muted)}
+:root[data-setting=fr]{--ink:#182f48;--muted:#5d6770;--paper:#f5eee0;--gold:#936722;--teal:#315f87;--red:#ad413b;--line:#d8ccba}
+[data-setting=fr] header{background:#182f48;border-bottom-color:#bf6655}
+[data-setting=fr] .primary{background:#315f87;border-color:#315f87;color:#fff}
+[data-setting=fr] .primary:hover:not(:disabled){background:#244768;color:#fff}
+[data-setting=fr] .introduction{background:linear-gradient(125deg,#fff8e7,#eee0c7)}
+[data-setting=fr] .role-choice{background:#fff7e8;border-color:#c7bba8;box-shadow:3px 3px 0 #182f4818}
+[data-setting=fr] .role-choice:hover{border-color:#315f87;background:#f2e4cb}
+[data-setting=fr] .role-choice img,[data-setting=fr] .guild-portrait,[data-setting=fr] .wizard-emblem{border-color:#182f48}
+[data-setting=fr] .panel,[data-setting=fr] .metric{border-color:#d8ccba}
+[data-setting=fr] .tab-art{border-color:#182f48}
+[data-setting=fr] .tab-art img{object-position:center 52%}
+[data-setting=fr] #edition-banner img{object-position:center 58%}
+@media(max-width:860px){.edition-control-row{align-items:flex-start;gap:14px}.edition-control-group{gap:7px}.edition-control-label{width:100%}#edition-banner{grid-template-columns:1fr 1fr}#edition-banner img{height:285px}.edition-banner-copy{padding:18px}}
+@media(max-width:560px){.language-switch.edition-controls{padding:13px;margin-bottom:18px}.edition-controls button{font-size:.82rem;padding:9px 10px}.edition-control-row{display:block}.edition-control-group+.edition-control-group{margin-top:14px}#edition-banner{grid-template-columns:1fr}#edition-banner img{height:230px;border-right:0;border-bottom:3px solid var(--ink)}.edition-banner-copy{padding:18px 20px}.edition-banner-copy h3{font-size:1.4rem}.edition-banner-copy p{font-size:.89rem;margin-bottom:10px}.edition-controls .edition-hint{font-size:.73rem}.role-choice b{overflow-wrap:anywhere}}
+@media print{.edition-controls{display:none}#edition-banner{break-inside:avoid;box-shadow:none}}

@@ -7,3 +7,7 @@ Prompt: Original wide comic-book illustration for The Siege of Ironhold: guild c
 ## Companion tab artwork
 
 Two original built-in generated companion illustrations use the workshop image as an art-direction reference: a quartermaster and clerk with a ledger, gold and crates for Ledger & history; six guild representatives discussing a supply-network plan for Story & rules. Both prompts request consistent bold comic outlines, halftone texture, medieval-industrial architecture and teal/brass/gold colours, without lettering or watermarks. The existing Titan workshop scene illustrates Factory floor.
+
+## Guild portraits
+
+Six original square illustrations generated with the built-in image-generation tool, using the Titan workshop image as the style reference. Common prompt: polished comic-book collectible portrait, bold black outlines and halftone shading, medieval industrial setting, teal/navy/brass/gold palette, warm light, centered subject, no lettering, watermark or franchise characters. Subjects: Emberborn smith forging a Titan frame; Gearwright engineer assembling a brass engine; Arcane artisan enchanting armor; Hammer and Anvil team fitting engine to chassis; Titanwright builders completing a Titan; Order inspector examining a joint with a magnifying lens and checklist. Compressed WebP copies are embedded in the standalone HTML for offline play.

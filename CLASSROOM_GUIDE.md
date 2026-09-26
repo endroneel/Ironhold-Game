@@ -78,3 +78,11 @@ Before a new session, expand Game Master setup and choose starting gold per guil
 Click Enter Game Master mode to reveal instructor controls. Enter your name, select one guild or all six, choose a gold grant/penalty, free extra downtime for next round (rounds 1–14), or a custom instruction note. A note does not change calculations. Explain every exception. Zero or negative gold ends the game, including instructor penalties; transfers must precede a bankrupting charge. Closed games cannot be revived except by Undo to correct an entry. Existing queued repairs are retained when adding downtime.
 
 All transfers and exceptions are included in history, saved replay and CSV. Repair costs are shown separately from net cash movements. The displayed gold baseline reflects the starting rule; grants may make current gold exceed it. Instructor mode is a shared-screen facilitator control, not an authenticated account or student access restriction.
+
+## Role dashboards and classroom reveal (3.6)
+
+Choose Game Master on entry to create or restore the session. Use Switch role / hand over screen to select a guild. A guild dashboard shows only that guild's displayed balances, relevant input/output stock, downtime, transfers and history, plus common rules. Dice and procurement responses are available only on that guild's turn. Sending gold is restricted to the selected guild. The instructor handles supplier votes, stage transfers and round progression in the Game Master view.
+
+The Game Master retains the full dashboard, exports, exception controls and starting-gold setup. Showcase all guilds opens a read-only debrief: choose a recorded round to see balances, cumulative output, queued downtime and that round's complete event history. A current incomplete round is labelled recorded so far. Return to Game Master resumes the live state unchanged. Save the game to review it later.
+
+This is shared-browser role switching, not authenticated multiplayer. Role selection is unrestricted and the complete game remains in the browser and save file. It is not suitable for securely concealing information from students who control the device. Separate phones/laptops do not synchronize. Private per-guild sessions require a backend with authentication, server-enforced role access and authoritative game state.

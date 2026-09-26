@@ -22,8 +22,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm install --no-save --package-lock=false jsdom@26
       - run: node build.mjs
       - run: node --test tests/*.test.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ironhold-game-source
+          path: |
+            src/
+            assets/
+            tests/
+            index.html
+            build*.mjs
+            README.md
+          retention-days: 7
       - name: Publish generated standalone game
         run: |
           git config user.name 'github-actions[bot]'

@@ -6,5 +6,7 @@ const engine=await fs.readFile(new URL('src/engine.js',root),'utf8');
 const ui=await fs.readFile(new URL('src/ui.js',root),'utf8');
 html=html.replace('<link rel="stylesheet" href="style.css">',()=>'<style>\n'+css+'\n</style>');
 html=html.replace('<script src="engine.js"></script><script src="ui.js"></script>',()=>'<script>\n'+engine+'\n</script>\n<script>\n'+ui+'\n</script>');
+const comic=await fs.readFile(new URL('assets/ironhold-comic.webp',root));
+html=html.replaceAll('assets/ironhold-comic.webp','data:image/webp;base64,'+comic.toString('base64'));
 await fs.writeFile(new URL('index.html',root),html);
 console.log('Built standalone index.html');

@@ -1,0 +1,13 @@
+{
+  "revision": "2026-09-28-dice-guide",
+  "countries": {
+    "france": {
+      "runtime_and_artwork_sha256": "42f083fe7d0b4696d0952bd958e244f35e24ccf220949bc119fce09aa5818665",
+      "rulebook_pages": 4
+    },
+    "kazakhstan": {
+      "runtime_and_artwork_sha256": "62b019efe0136112e9ae3c95641e36f74142aec64a4825bcb02be3224c9bb467",
+      "rulebook_pages": 4
+    }
+  }
+}

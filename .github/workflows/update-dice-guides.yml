@@ -1,0 +1,63 @@
+name: Expand and validate dice rulebooks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'build-dice-guides.py'
+      - 'src/dice-guide-data.json'
+      - 'tests/dice-guides.test.cjs'
+      - '.github/workflows/update-dice-guides.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ironhold-build
+  cancel-in-progress: true
+jobs:
+  dice-guides:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'reportlab>=4,<5' 'pypdf>=5,<7'
+      - run: npm install --no-save --package-lock=false jsdom@26
+      - name: Update guides without changing country runtimes
+        run: |
+          python build-dice-guides.py
+          node build.mjs
+      - name: Regression and dice guide tests
+        run: node --test --test-timeout=90000 tests/*.test.cjs > dice-test-results.txt 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ironhold-dice-guides-validated
+          path: |
+            index.html
+            france.html
+            kazakhstan.html
+            src/
+            tests/
+            assets/
+            build*.mjs
+            build-dice-guides.py
+            documents/Ironhold_4_1_Guild_Rulebook.pdf
+            documents/Ironhold_4_1_Game_Master_Rulebook.pdf
+            documents/Ironhold_Legacy_Dice_Guide.pdf
+            documents/dice-guide-validation.json
+            dice-test-results.txt
+          retention-days: 7
+      - name: Publish expanded rulebooks
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html france.html kazakhstan.html src/index.html src/locales.js src/locales/rules-fr.html src/locales/rules-ru.html src/locales/rules-kk.html documents/Ironhold_4_1_Guild_Rulebook.pdf documents/Ironhold_4_1_Game_Master_Rulebook.pdf documents/Ironhold_Legacy_Dice_Guide.pdf documents/dice-guide-validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish validated dice explanations and expanded rulebook PDFs [skip ci]'
+            git push
+          fi
